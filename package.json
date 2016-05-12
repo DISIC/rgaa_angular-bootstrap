@@ -1,0 +1,21 @@
+{
+  "name": "rgaa_angular-bootstrap",
+  "version": "1.0.0",
+  "description": "Accessible Angular UI components.",
+  "author": "Jérôme Botineau <jerome.botineau@vtech.fr>",
+  "license": "MIT",
+  "main": "dist/rgaa_angular-bootstrap.js",
+  "scripts": {
+    "build": "webpack",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "angular": "^1.2.0",
+    "angular-ui-bootstrap": "^0.12.0"
+  },
+  "devDependencies": {
+    "angular": "^1.2.0",
+    "angular-ui-bootstrap": "^0.12.0",
+    "webpack": "^1.12.15"
+  }
+}
