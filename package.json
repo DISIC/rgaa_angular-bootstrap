@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Accessible Angular UI components.",
   "author": "Jérôme Botineau <jerome.botineau@vtech.fr>",
-  "license": "MIT",
+  "license": "CC-BY 2.0",
   "main": "dist/rgaa_angular-bootstrap.js",
   "scripts": {
     "build": "webpack",
