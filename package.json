@@ -2,7 +2,7 @@
   "name": "rgaa_angular-bootstrap",
   "version": "2.0.0",
   "description": "Accessible Angular UI components.",
-  "author": "Jérôme Botineau <jerome.botineau@vtech.fr>",
+  "author": "Etat Plateforme <rgaa.sgmap@modernisation.gouv.fr>",
   "license": "CC-BY 2.0",
   "main": "dist/rgaa_angular-bootstrap.js",
   "scripts": {
