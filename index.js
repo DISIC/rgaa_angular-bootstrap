@@ -8,81 +8,91 @@ var rgaaAngularBootstrap = angular
 		'getUID',
 		require('./src/directives/uniqueId')
 	])
-	.directive('enforceFocus', [
-		'$document',
-		'$timeout',
-		require('./src/directives/enforceFocus')
-	])
-	.directive('tabpanel', [
+	.directive('uibTabset', [
 		'getUID',
 		'$timeout',
-		require('./src/directives/tabpanel')
+		require('./src/directives/tabset')
 	])
-	.directive('tooltipPopup', [
+	.directive('uibProgressbar', [
+		'getUID',
+		'$timeout',
+		require('./src/directives/progressbar')
+	])
+	.directive('uibTooltipPopup', [
 		'getUID',
 		require('./src/directives/tooltipPopup')]
 	)
 	.controller('GroupController', [
 		'$scope',
 		'$attrs',
-		'accordionConfig',
+		'uibAccordionConfig',
 		require('./src/controllers/GroupController')
 	])
-	.directive('group', require('./src/directives/group'))
+	.directive('group', [
+		'$timeout',
+		require('./src/directives/group')
+	])
 	.directive('groupItem', [
 		'$timeout',
 		require('./src/directives/groupItem')
 	])
-	.directive('keySpace', require('./src/directives/keySpace'))
 	.directive('keyboardRotate', [
 		'$document',
 		'$timeout',
 		require('./src/directives/keyboardRotate')
 	])
-	.directive('btnRadio', require('./src/directives/btnRadio'))
-	.directive('btnCheckbox', require('./src/directives/btnCheckbox'))
-	.directive('datepickerPopupWrap', [
-		'$document',
-		'$timeout',
-		require('./src/directives/datepickerPopupWrap')
-	]);
-
-
+	.directive('uibBtnRadio', require('./src/directives/btnRadio'))
+	.directive('uibBtnCheckbox', require('./src/directives/btnCheckbox'))
+	.directive('uibRating', require('./src/directives/slider'))
 
 var dayModule = angular
-	.module('template/datepicker/day.html')
+	.module('uib/template/datepicker/day.html')
 	.run([
 		'$templateCache',
 		require('./src/templates/datepicker/day')
 	]);
 
+var tabsetModule = angular
+	.module('uib/template/tabs/tabset.html')
+	.run([
+		'$templateCache',
+		require('./src/templates/tabset/tabset')
+	]);
 
+var tabModule = angular
+	.module('uib/template/tabs/tab.html')
+	.run([
+		'$templateCache',
+		require('./src/templates/tabset/tab')
+	]);
 
 var accordionModule = angular
-	.module('template/accordion/accordion.html')
+	.module('uib/template/accordion/accordion.html')
 	.run([
 		'$templateCache',
 		require('./src/templates/accordion/accordion')
 	]);
 
-
-
 var groupModule = angular
-	.module('template/accordion/accordion.html')
+	.module('uib/template/accordion/accordion-group.html')
 	.run([
 		'$templateCache',
 		require('./src/templates/accordion/group')
 	]);
 
-
-
-var windowModule = angular
-	.module('template/modal/window.html')
+var sliderModule = angular
+	.module('uib/template/rating/rating.html')
 	.run([
 		'$templateCache',
-		require('./src/templates/modal/window')
+		require('./src/templates/slider/slider')
 	]);
 
+var progressbarModule = angular
+	.module('uib/template/progressbar/progressbar.html')
+	.run([
+		'$templateCache',
+		require('./src/templates/progressbar/progressbar')
+	]);
 
 
 /**

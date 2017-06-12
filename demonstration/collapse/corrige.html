@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Accordion - Angular UI Bootstrap - V-Technologies - RGAA3</title>
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.navbar .navbar-brand {
+			color: #fff;
+		}
+		*:focus {
+			border : 2px solid red !important;
+		}
+		.navbar {
+			background: #2868C9;
+		}
+	</style>
+</head>
+<body>
+	<header role="banner">
+		<nav class="navbar navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" ng-app="ui.bootstrap.demo">
+		<h1>Angular UI components</h1>
+
+
+		<p class="alert alert-info">
+			{
+				"angular": "^1.5.8",
+				"angular-ui-bootstrap": "2.2.0"
+			}
+		</p>
+
+		<div ng-controller="AccordionDemoCtrl">
+			<p>
+				<button type="button" class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+				<button type="button" class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+			</p>
+
+			<label class="checkbox">
+				<input type="checkbox" ng-model="oneAtATime">
+				Open only one at a time
+			</label>
+			<uib-accordion close-others="oneAtATime">
+				<div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+					This content is straight in the template.
+				</div>
+				<div uib-accordion-group class="panel-default" heading="Dynamic Body Content">
+					<p>The body of the accordion group grows to fit the contents</p>
+						<button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+						<div ng-repeat="item in items">{{item}}</div>
+				</div>
+				<div uib-accordion-group class="panel-default" is-open="status.open">
+						<uib-accordion-heading>
+							I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+						</uib-accordion-heading>
+						This is just some content to illustrate fancy headings.
+				</div>
+			</uib-accordion>
+			<p>Du contenu avec un <a href="#">lien</a> après le composant</p>
+		</div>
+
+	</div>
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="../../dist/rgaa_angular-bootstrap.js"></script>
+	<script type="text/javaScript">
+		angular.module('ui.bootstrap.demo', ['rgaaAngularBootstrap']).controller('AccordionDemoCtrl', function ($scope) {
+			$scope.oneAtATime = true;
+
+			$scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+			$scope.addItem = function() {
+				var newItemNo = $scope.items.length + 1;
+				$scope.items.push('Item ' + newItemNo);
+			};
+
+			$scope.status = {
+				isFirstOpen: true,
+				isFirstDisabled: false
+			};
+		});
+	</script>
+</body>
+</html>

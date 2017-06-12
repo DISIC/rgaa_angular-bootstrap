@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tabs - Angular UI Bootstrap - V-Technologies - RGAA3</title>
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.navbar .navbar-brand {
+			color: #fff;
+		}
+		*:focus {
+			border : 2px solid red !important;
+		}
+		.navbar {
+			background: #2868C9;
+		}
+	</style>
+</head>
+<body>
+	<header role="banner">
+		<nav class="navbar navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" ng-app="ui.bootstrap.demo">
+		<h1>Angular UI components</h1>
+
+
+		<p class="alert alert-info">
+			{
+				"angular": "^1.5.8",
+				"angular-ui-bootstrap": "2.2.0"
+			}
+		</p>
+
+		<div ng-controller="TabsDemoCtrl">
+			<p>Select a tab by setting active binding to true:</p>
+			<p>
+				<button type="button" class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select third tab</button>
+				<button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select fourth tab</button>
+			</p>
+			<p>
+				<button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+			</p>
+			<hr />
+
+			<uib-tabset>
+				<uib-tab heading="Static title">Static content</uib-tab>
+				<uib-tab heading="Static title">Static content <a href="#">focus me</a></uib-tab>
+				<uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+					{{tab.content}}
+				</uib-tab>
+			</uib-tabset>
+
+			<hr />
+
+			<uib-tabset vertical="true" type="pills">
+				<uib-tab heading="Vertical 1">Vertical content 1</uib-tab>
+				<uib-tab heading="Vertical 2">Vertical content 2 <a href="#">focus me</a></uib-tab>
+			</uib-tabset>
+
+			<hr />
+		</div>
+
+	</div>
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="../../dist/rgaa_angular-bootstrap.js"></script>
+	<script type="text/javaScript">
+		angular.module('ui.bootstrap.demo', ['rgaaAngularBootstrap']).controller('TabsDemoCtrl', function ($scope, $window) {
+			$scope.tabs = [
+				{ title:'Dynamic Title 1', content:'Dynamic content 1' },
+				{ title:'Dynamic Title 2', content:'Dynamic content 2' }
+			];
+		});
+	</script>
+</body>
+</html>

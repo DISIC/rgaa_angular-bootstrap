@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tooltip - Angular UI Bootstrap - V-Technologies - RGAA3</title>
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.navbar .navbar-brand {
+			color: #fff;
+		}
+		*:focus {
+			border : 2px solid red !important;
+		}
+		.navbar {
+			background: #2868C9;
+		}
+	</style>
+</head>
+<body>
+	<header role="banner">
+		<nav class="navbar navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" ng-app="ui.bootstrap.demo">
+		<h1>Angular UI components</h1>
+
+
+		<p class="alert alert-info">
+			{
+				"angular": "^1.5.8",
+				"angular-ui-bootstrap": "2.2.0"
+			}
+		</p>
+
+		<div ng-controller="TooltipDemoCtrl">
+			<form role="form">
+				<div class="form-group">
+					<label>Or use custom triggers, like focus: </label>
+					<input type="text" value="Click me!" uib-tooltip="See? Now click away..."  tooltip-trigger="'focus'" tooltip-placement="right" class="form-control" />
+				</div>
+
+				<p>Du contenu avec un <a href="#">lien</a> après le composant</p>
+			</form>
+		</div>
+
+	</div>
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="../../dist/rgaa_angular-bootstrap.js"></script>
+	<script type="text/javaScript">
+		angular.module('ui.bootstrap.demo', ['rgaaAngularBootstrap']).controller('TooltipDemoCtrl', function ($scope) {
+		});
+	</script>
+</body>
+</html>

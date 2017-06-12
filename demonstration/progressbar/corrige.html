@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Progressbar - Angular UI Bootstrap - V-Technologies - RGAA3</title>
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.navbar .navbar-brand {
+			color: #fff;
+		}
+		*:focus {
+			border : 2px solid red !important;
+		}
+		.navbar {
+			background: #2868C9;
+		}
+	</style>
+</head>
+<body>
+	<header role="banner">
+		<nav class="navbar navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" ng-app="ui.bootstrap.demo">
+		<h1>Angular UI components</h1>
+
+
+		<p class="alert alert-info">
+			{
+				"angular": "^1.5.8",
+				"angular-ui-bootstrap": "2.2.0"
+			}
+		</p>
+
+		<div ng-controller="ProgressDemoCtrl">
+
+			<hr />
+			<h3 id="titre-progress">Dynamic</h3>
+			<uib-progressbar animate="false" aria-labelledby="titre-progress" id="progressbar" value="dynamic" type="success"><b>{{dynamic}}%</b></uib-progressbar>
+			<div id="region" aria-busy="{{busy}}" aria-describedby="progressbar">
+			<p>Région mise a jour par la progressbar</p>
+			<button class="btn btn-sm btn-primary" type="button" ng-click="start()">Start</button>
+			</div>
+
+			<hr />
+		</div>
+
+	</div>
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="../../dist/rgaa_angular-bootstrap.js"></script>
+	<script type="text/javaScript">
+		angular.module('ui.bootstrap.demo', ['rgaaAngularBootstrap']).controller('ProgressDemoCtrl', ['$scope', '$timeout',function ($scope, $timeout) {
+			$scope.max = 200;
+			$scope.busy = false;
+			$scope.dynamic = 0;
+
+			$scope.start = function() {
+				progress();
+			};
+
+			function progress() {
+
+				$scope.busy = true;
+
+				if ( $scope.dynamic < 100 ) {
+					$scope.dynamic++;
+					$timeout( progress, 50 );
+				}else{
+					$scope.busy = false;
+				}
+			}
+		}]);
+	</script>
+</body>
+</html>

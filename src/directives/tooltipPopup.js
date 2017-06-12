@@ -4,25 +4,18 @@
 module.exports = function(getUID){
   return {
     link: function($scope, iElm) {
-      //Add role tooltip
+      // Add role tooltip
       iElm.attr('role', 'tooltip');
-      //Add a Unique ID
+      // Add a Unique ID
       var idtooltip = getUID('tooltip-');
       iElm.attr('id', idtooltip);
+      // Add aria-describedby on previousElementSibling
       var originElement = angular.element(iElm[0].previousElementSibling);
       originElement.attr('aria-describedby', idtooltip);
 
-      //Remove tooltip on keyup ESC
-      function dismissTooltip (e) {
-        if(e.keyCode === 27){
-          iElm.remove();
-        }
-      }
-      originElement.bind('keyup', dismissTooltip);
-
+      // remove aria-describedby on destroy
       $scope.$on('$destroy',function() {
         originElement.removeAttr('aria-describedby');
-        originElement.unbind('keyup', dismissTooltip);
       });
 
     }

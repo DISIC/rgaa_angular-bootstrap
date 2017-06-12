@@ -7,7 +7,10 @@ var fullPath = path.resolve.bind(null, __dirname);
  *
  */
 module.exports = {
-	entry: fullPath('index.js'),
+	entry: [
+		'babel-polyfill',
+		fullPath('index.js')
+	],
 	output: {
 		path: 'dist',
 		filename: 'rgaa_angular-bootstrap.js',
@@ -17,5 +20,14 @@ module.exports = {
 	externals: [
 		'angular',
 		'angular-ui-bootstrap'
-	]
+	],
+	module: {
+		loaders: [
+			{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				include: fullPath('src')
+			}
+		]
+	}
 };

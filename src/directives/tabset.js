@@ -5,7 +5,6 @@ module.exports = function(getUID, $timeout){
   return {
     link: function($scope, iElm) {
 
-
       function render() {
 
         var tablist = iElm[0].firstElementChild;
@@ -30,8 +29,7 @@ module.exports = function(getUID, $timeout){
         });
       }
 
-      $timeout(render,0);
-
+      $timeout(render, 0);
     }
   };
 };

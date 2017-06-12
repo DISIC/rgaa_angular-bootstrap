@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>
+			AngularUI Bootstrap - SGMAP
+		</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			.navbar .navbar-brand {
+				color: #fff;
+			}
+			li a strike {
+				color: #999 !important;
+			}
+			.navbar {
+				background: #2868C9;
+			}
+		</style>
+	</head>
+	<body>
+		<header role="banner">
+			<nav class="navbar navbar-dark">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container">
+			<h1>Angular UI Bootstrap</h1>
+
+			<p class="alert alert-info">
+				{
+					"angular": "^1.5.8",
+					"angular-ui-bootstrap": "2.2.0"
+				}
+			</p>
+
+			<table class="table table-bordered">
+				<caption>Tableau des composants d’interface pour la bibliothèque <span lang="en">Angular UI Bootstrap</span></caption>
+				<thead>
+					<tr>
+						<th scope="col">composant</th>
+						<th scope="col">évaluation du composant natif</th>
+						<th scope="col">correction</th>
+						<th scope="col">restitution lecteurs d'écran</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row" lang="en">Slider</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Progressbar</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Modal - Dialog</th>
+						<td class="success">conforme</td>
+						<td class="success">aucune</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Tabpannel</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Tooltip</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Accordion</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Menu</th>
+						<td colspan="3">
+							non applicable <br>
+							le menu proposé par la bibliothèque s'apparente à un menu de navigation, alors que le motif de conception définit un menu applicatif
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Radiobutton</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Checkbox</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+					<tr>
+						<th scope="row" lang="en">Datepicker</th>
+						<td class="danger">non conforme</td>
+						<td class="success">complète</td>
+						<td class="info">A TESTER</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- Slider -->
+			<h2>Sliders</h2>
+			<ul>
+				<li><a href="slider/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="slider/index.html">Voir le slider AngularUi original</a></li>
+			</ul>
+
+			<!-- Progressbar-->
+			<h2>Progress bar</h2>
+			<ul>
+				<li><a href="progressbar/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="progressbar/index.html">Voir la progressbar AngularUi original</a></li>
+			</ul>
+
+			<!--Dialog-->
+			<h2>Dialog (modal) </h2>
+			<ul lang="fr">
+				<li><a href="modal/index.html">Voir la dialog AngularUi original</a></li>
+			</ul>
+
+			<!--Tab-->
+			<h2>Tabs </h2>
+			<ul lang="fr">
+				<li><a href="tabs/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="tabs/index.html">Voir le tabs AngularUi original</a></li>
+			</ul>
+
+			<!--Tooltip-->
+			<h2>Tooltip</h2>
+			<ul lang="fr">
+				<li><a href="tooltip/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="tooltip/index.html">Voir le tooltip AngularUi original</a></li>
+			</ul>
+
+			<!--Accordion-->
+			<h2>Accordion</h2>
+			<ul lang="fr">
+				<li><a href="collapse/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="collapse/index.html">Voir l'accordion AngularUi original</a></li>
+			</ul>
+
+			<!--Menu-->
+			<h2>Menu (Navbar)</h2>
+			<ul lang="fr">
+				<li>Le composant Menu ne correspond pas au modèle de conception WAI-ARIA</li>
+				<li><a href="dropdowns/index.html">Voir le menu AngularUi original</a></li>
+			</ul>
+
+			<!--Button-->
+			<h2>Button</h2>
+			<p>Non proposé par la bibliothèque d'origine.</p>
+
+			<h2>Radio button</h2>
+			<ul lang="fr">
+				<li><a href="radio-button/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="radio-button/index.html">Voir le Radio button AngularUi original</a></li>
+			</ul>
+
+			<h2>Checkbox button</h2>
+			<ul lang="fr">
+				<li><a href="checkbox-button/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="checkbox-button/index.html">Voir le Checkbox button AngularUi original</a></li>
+			</ul>
+
+			<h2>Tree</h2>
+			<p>Non proposé par la bibliothèque d'origine.</p>
+
+			<h2>Autocomplete</h2>
+			<p>Non proposé par la bibliothèque d'origine.</p>
+
+			<h2>Datepicker</h2>
+			<ul lang="fr">
+				<li><a href="datepicker/corrige.html">Composant rendu accessible</a></li>
+				<li><a href="datepicker/index.html">Voir le datepicker AngularUi original</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

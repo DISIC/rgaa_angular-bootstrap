@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Datepicker - Angular UI Bootstrap - V-Technologies - RGAA3</title>
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		.navbar .navbar-brand {
+			color: #fff;
+		}
+		*:focus {
+			border : 2px solid red !important;
+		}
+		.navbar {
+			background: #2868C9;
+		}
+	</style>
+</head>
+<body>
+	<header role="banner">
+		<nav class="navbar navbar-dark">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../index.html" class="navbar-brand">Accueil des tests AngularUi Bootstrap</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container" ng-app="ui.bootstrap.demo">
+		<h1>Angular UI components</h1>
+
+
+		<p class="alert alert-info">
+			{
+				"angular": "^1.5.8",
+				"angular-ui-bootstrap": "2.2.0"
+			}
+		</p>ularJs V1.5.8</p>
+		</div>
+
+		<div ng-controller="DatepickerDemoCtrl">
+			<pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+			<h4>Popup</h4>
+			<div class="row">
+				<div class="col-md-6">
+					<label for="rg-from">Entrer une date:</label>
+					<p class="input-group">
+						<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i><span class="sr-only">Ouvrir le datepicker</span></button>
+						</span>
+					</p>
+				</div>
+			</div>
+
+			<hr />
+			<button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+			<button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">24/08/2009</button>
+			<button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+		</div>
+
+	</div>
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script type="text/javaScript">
+		angular.module('ui.bootstrap.demo', ['ui.bootstrap']).controller('DatepickerDemoCtrl', function ($scope) {
+			$scope.today = function() {
+				$scope.dt = new Date();
+			};
+			$scope.today();
+
+			$scope.clear = function () {
+				$scope.dt = null;
+			};
+
+			$scope.open = function($event) {
+				$event.preventDefault();
+				$event.stopPropagation();
+
+				$scope.opened = true;
+			};
+
+			$scope.dateOptions = {
+				formatYear: 'yy',
+				startingDay: 1
+			};
+			$scope.format = 'dd/MM/yyyy';
+		});
+	</script>
+</body>
+</html>

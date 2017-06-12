@@ -3,7 +3,7 @@
  */
 module.exports = function(){
   return {
-    require: ['btnCheckbox', 'ngModel'],
+    require: ['uibBtnCheckbox', 'ngModel'],
     priority: 200, //Make sure watches are fired after any other directives that affect the ngModel value
     link: function($scope, iElm, iAttrs, controller) {
       var buttonsCtrl = controller[0], ngModelCtrl = controller[1];

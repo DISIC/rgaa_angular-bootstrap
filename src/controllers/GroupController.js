@@ -2,17 +2,16 @@
  *
  */
 module.exports = function ($scope, $attrs, accordionConfig) {
-
   // This array keeps track of the accordion groups
   this.groups = [];
   this.groupsElem = [];
+
 
   // This is called from the accordion-group directive to add itself to the accordion
   this.addGroup = function(groupScope, element) {
     var that = this;
     this.groups.push(groupScope);
     this.groupsElem.push(element);
-
     groupScope.$on('$destroy', function (event) {
       that.removeGroup(groupScope);
     });
@@ -29,12 +28,11 @@ module.exports = function ($scope, $attrs, accordionConfig) {
 
   this.initFocusable = function() {
     var that = this;
-    angular.forEach(this.groups, function (group, index) {
-      if ( index === 0 ) {
-        group.isFocused = true;
-        that.groups.indexSelected = 0;
-      }
+    const index = this.groups.findIndex(function(element) {
+      return element.isFocused;
     });
+    this.groups.indexSelected = index !== -1 ? index : 0;
+    this.changeSelected();
   };
 
   this.nextFocusable = function(change) {

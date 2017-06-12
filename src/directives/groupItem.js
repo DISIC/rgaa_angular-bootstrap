@@ -9,7 +9,7 @@ module.exports = function($timeout) {
     priority: 10000,
     scope: true,
     link: function(scope, element, attrs, groupCtrl) {
-      scope.isFocused = false;
+      scope.isFocused = scope.$parent.isOpen ? true : false;
       groupCtrl.addGroup(scope, element);
 
       function KeyTrap (evt) {
