@@ -2,7 +2,7 @@
 
 Corrections d'accessibilité sur les composants Angular Bootstrap.
 
-[Tutoriel sur la mise en accessibilité](https://disic.github.io/rgaa_bibliotheques_javascript/tutoriels/angular-ui.html)
+[Tutoriel sur la mise en accessibilité](https://disic.github.io/rgaa_bibliotheques-javascript/tutoriels/angular-ui.html)
 
 ## Installation
 
